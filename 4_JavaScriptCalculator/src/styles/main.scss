@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
+@font-face {
+    font-family: 'Digital';
+    src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot');
+    src: url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix') format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2') format('woff2'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff') format('woff'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf') format('truetype'),
+    url('//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7') format('svg');
+}
+
+$bodyBackground: #F8F2E7;
+$calculatorBorderColor: #47476b;
+$calculatorBackground: black;
+$formulaColor: orange;
+$outputColor: white;
+$buttonBackground: #4d4d4d;
+$outlineColor: grey;
+$clearButtonBackground: #AC3939;
+$equalsButtonBackground: #87AE55;
+$operatorButtonBackground: #666666;
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+}
+
+body {
+    background: $bodyBackground;
+
+    #root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        .calculator {
+            border: 5px solid $calculatorBorderColor;
+            border-radius: 10px;
+            background: $calculatorBackground;
+            padding: 5px;
+            width: 320px;
+
+            .formula,
+            .output {
+                font-family: 'Digital', monospace;
+                text-align: right;
+            }
+
+            .formula {
+                min-height: 20px;
+                font-size: 20px;
+                line-height: 20px;
+                color: $formulaColor;
+                vertical-align: text-top;
+                overflow-wrap: break-word;
+            }
+
+            .output {
+                font-size: 30px;
+                color: $outputColor;
+                line-height: 35px;
+            }
+
+            .buttons {
+                button {
+                    height: 65px;
+                    width: 75px;
+                    color: white;
+                    background: $buttonBackground;
+                    outline: 1px solid black;
+                    border: none;
+                    font-family: Share Tech Mono, monospace;
+                    font-size: 20px;
+
+                    &:hover {
+                        color: black;
+                        outline: 1px solid $outlineColor;
+                    }
+                }
+
+                .clear-button,
+                .zero-button {
+                    width: 150px;
+                }
+
+                .clear-button {
+                    background: $clearButtonBackground;
+                    font-family: monospace;
+                }
+
+                .operator-button {
+                    background: $operatorButtonBackground;
+                }
+
+                .equals-button {
+                    background: $equalsButtonBackground;
+                    height: 130px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
